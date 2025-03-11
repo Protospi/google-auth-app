@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "title": "Painel",
+    "welcome": "Bem-vindo ao seu Painel",
+    "blankDashboard": "Esta é uma página de painel em branco. O conteúdo será adicionado posteriormente.",
+    "logout": "Sair"
+  },
+  "languageSelector": {
+    "title": "Selecione seu Idioma",
+    "description": "Por favor, selecione seu idioma preferido para a aplicação",
+    "continueToDashboard": "Continuar para o Painel"
+  },
+  "login": {
+    "title": "Bem-vindo",
+    "subtitle": "Faça login para acessar seu painel",
+    "signInWithGoogle": "Entrar com Google"
+  }
+}

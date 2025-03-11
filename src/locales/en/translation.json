@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome to your Dashboard",
+    "blankDashboard": "This is a blank dashboard page. Content will be added later.",
+    "logout": "Logout"
+  },
+  "languageSelector": {
+    "title": "Select Your Language",
+    "description": "Please select your preferred language for the application",
+    "continueToDashboard": "Continue to Dashboard"
+  },
+  "login": {
+    "title": "Welcome",
+    "subtitle": "Sign in to access your dashboard",
+    "signInWithGoogle": "Sign in with Google"
+  }
+}

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../contexts/AuthContext';
 
 const DashboardPage: React.FC = () => {
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
+  const { t, i18n } = useTranslation();
 
   React.useEffect(() => {
     if (!currentUser) {
@@ -21,6 +23,10 @@ const DashboardPage: React.FC = () => {
     }
   };
 
+  const changeLanguage = () => {
+    navigate('/language-selector');
+  };
+
   return (
     <div style={{
       padding: '20px',
@@ -35,7 +41,7 @@ const DashboardPage: React.FC = () => {
         padding: '20px 0',
         borderBottom: '1px solid #eee'
       }}>
-        <h1 style={{ margin: 0 }}>Dashboard</h1>
+        <h1 style={{ margin: 0 }}>{t('dashboard.title')}</h1>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           {currentUser?.photoURL && (
             <img 
@@ -52,6 +58,15 @@ const DashboardPage: React.FC = () => {
           <div style={{ marginRight: '20px' }}>
             <div style={{ fontWeight: 'bold' }}>{currentUser?.displayName}</div>
             <div style={{ fontSize: '14px', color: '#666' }}>{currentUser?.email}</div>
+            <div style={{ 
+              fontSize: '14px', 
+              color: '#4285F4', 
+              cursor: 'pointer', 
+              textDecoration: 'underline',
+              marginTop: '4px'
+            }} onClick={changeLanguage}>
+              {i18n.language.toUpperCase()}
+            </div>
           </div>
           <button 
             onClick={handleLogout}
@@ -64,7 +79,7 @@ const DashboardPage: React.FC = () => {
               cursor: 'pointer'
             }}
           >
-            Logout
+            {t('dashboard.logout')}
           </button>
         </div>
       </header>
@@ -76,8 +91,8 @@ const DashboardPage: React.FC = () => {
           padding: '30px',
           boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
         }}>
-          <h2>Welcome to your Dashboard</h2>
-          <p>This is a blank dashboard page. Content will be added later.</p>
+          <h2>{t('dashboard.welcome')}</h2>
+          <p>{t('dashboard.blankDashboard')}</p>
         </div>
       </main>
     </div>

@@ -1,0 +1,18 @@
+{
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Bienvenido a tu Panel",
+    "blankDashboard": "Esta es una página de panel en blanco. El contenido se agregará más tarde.",
+    "logout": "Cerrar sesión"
+  },
+  "languageSelector": {
+    "title": "Selecciona tu Idioma",
+    "description": "Por favor, selecciona tu idioma preferido para la aplicación",
+    "continueToDashboard": "Continuar al Panel"
+  },
+  "login": {
+    "title": "Bienvenido",
+    "subtitle": "Inicia sesión para acceder a tu panel",
+    "signInWithGoogle": "Iniciar sesión con Google"
+  }
+}

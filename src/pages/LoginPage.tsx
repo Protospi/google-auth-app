@@ -1,14 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useTranslation } from 'react-i18next';
 
 const LoginPage: React.FC = () => {
   const { signInWithGoogle, currentUser } = useAuth();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   React.useEffect(() => {
     if (currentUser) {
-      navigate('/dashboard');
+      // Redirect to language selector page after login
+      navigate('/language-selector');
     }
   }, [currentUser, navigate]);
 
@@ -31,9 +34,9 @@ const LoginPage: React.FC = () => {
         maxWidth: '400px',
         textAlign: 'center'
       }}>
-        <h1 style={{ marginBottom: '24px', color: '#333' }}>Welcome</h1>
+        <h1 style={{ marginBottom: '24px', color: '#333' }}>{t('login.title')}</h1>
         <p style={{ marginBottom: '32px', color: '#666' }}>
-          Sign in to access your dashboard
+          {t('login.subtitle')}
         </p>
         <button 
           onClick={signInWithGoogle}
@@ -59,7 +62,7 @@ const LoginPage: React.FC = () => {
             <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
             <path fill="none" d="M0 0h48v48H0z"/>
           </svg>
-          Sign in with Google
+          {t('login.signInWithGoogle')}
         </button>
       </div>
     </div>
